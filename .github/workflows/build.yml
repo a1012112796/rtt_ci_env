@@ -21,3 +21,13 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
+      - uses: mr-smithers-excellent/docker-build-push@v5
+        name: Build & push aarch64-none-elf
+        with:
+          image: a1012112796/rtt_ci_env
+          registry: docker.io
+          tags: aarch64-none-elf
+          dockerfile: aarch64.Dockerfile
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+

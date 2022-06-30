@@ -16,5 +16,5 @@ RUN apt-get update \
     | tar -xj -C /opt \
     && /opt/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-gcc --version
 
-ENV RTT_EXEC_PATH=/opt/gcc-arm-none-eabi-6-2017-q2-update/bin
+ENV RTT_EXEC_PATH=/opt/gcc-arm-none-eabi-10-2020-q4-major/bin
 ENV RTT_CC='gcc'
