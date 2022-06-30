@@ -1,0 +1,26 @@
+name: build-docker
+on: 
+  push:
+    branches:
+      - master
+
+jobs:
+  arm-none-eabi:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        name: Check out code
+
+      -
+        name: Login to DockerHub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+      -
+        name: arm-none-eabi
+        uses: docker/build-push-action@v5
+        with:
+          push: true
+          tags: a1012112796/rtt_ci_env:arm-none-eabi
+          dockerfile: arm-none-eabi/Dockerfile
