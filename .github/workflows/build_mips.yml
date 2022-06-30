@@ -1,0 +1,22 @@
+name: build-mips-sde-elf
+on: 
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        name: Check out code
+
+      - uses: mr-smithers-excellent/docker-build-push@v5
+        name: Build & push mips-sde-elf
+        with:
+          image: a1012112796/rtt_ci_env
+          registry: docker.io
+          tags: mips-sde-elf
+          dockerfile: mips.Dockerfile
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}

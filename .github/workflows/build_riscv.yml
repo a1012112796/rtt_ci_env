@@ -1,0 +1,22 @@
+name: build-xpack-riscv-none
+on: 
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        name: Check out code
+
+      - uses: mr-smithers-excellent/docker-build-push@v5
+        name: Build & push xpack-riscv-none
+        with:
+          image: a1012112796/rtt_ci_env
+          registry: docker.io
+          tags: xpack-riscv-none
+          dockerfile: riscv.Dockerfile
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
