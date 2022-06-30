@@ -15,6 +15,7 @@ jobs:
         name: Build & push arm-none-eabi
         with:
           image: a1012112796/rtt_ci_env
+          registry: docker.io
           tags: arm-none-eabi
           dockerfile: arm.Dockerfile
           username: ${{ secrets.DOCKERHUB_USERNAME }}
