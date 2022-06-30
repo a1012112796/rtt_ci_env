@@ -19,7 +19,7 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       -
         name: arm-none-eabi
-        uses: docker/build-push-action@v3
+        uses: mr-smithers-excellent/docker-build-push@v5
         with:
           push: true
           tags: a1012112796/rtt_ci_env:arm-none-eabi
