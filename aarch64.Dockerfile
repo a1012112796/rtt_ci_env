@@ -8,6 +8,7 @@ RUN apt-get update \
     && apt-get -qq -y install git curl gcc-multilib libsdl-dev libncurses5-dev python3 python-is-python3 python3-pip scons \
     && python --version \
     && python -m pip install --upgrade pip -qq \
+    && pip install requests -qq \
 # clean apt cache
     && rm -rf /var/lib/apt/lists/* \
     && rm -rf /var/cache/apk/* \
