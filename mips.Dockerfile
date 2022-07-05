@@ -12,8 +12,8 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/* \
     && rm -rf /var/cache/apk/* \
 # Install Mips ToolChains
-    curl -SL https://github.com/RT-Thread/toolchains-ci/releases/download/v1.1/mips-2016.05-7-mips-sde-elf-i686-pc-linux-gnu.tar.bz2 \
-    | tar -jxv -C /opt \
+    && curl -SL https://github.com/RT-Thread/toolchains-ci/releases/download/v1.1/mips-2016.05-7-mips-sde-elf-i686-pc-linux-gnu.tar.bz2 \
+    | tar -jx -C /opt \
     && /opt/mips-2016.05/bin/mips-sde-elf-gcc --version
 
 ENV RTT_EXEC_PATH=/opt/mips-2016.05/bin
