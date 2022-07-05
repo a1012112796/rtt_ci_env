@@ -12,11 +12,11 @@ jobs:
         name: Check out code
 
       - uses: mr-smithers-excellent/docker-build-push@v5
-        name: Build & push mips-sde-elf
+        name: Build & push sourcery-mips
         with:
           image: a1012112796/rtt_ci_env
           registry: docker.io
-          tags: mips-sde-elf
+          tags: sourcery-mips
           dockerfile: mips.Dockerfile
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}

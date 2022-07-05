@@ -12,11 +12,11 @@ jobs:
         name: Check out code
 
       - uses: mr-smithers-excellent/docker-build-push@v5
-        name: Build & push riscv64-unknown-elf
+        name: Build & push sourcery-riscv64-unknown-elf
         with:
           image: a1012112796/rtt_ci_env
           registry: docker.io
-          tags: riscv64-unknown-elf
+          tags: sourcery-riscv64-unknown-elf
           dockerfile: riscv64.Dockerfile
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}

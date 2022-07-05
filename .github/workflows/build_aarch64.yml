@@ -12,11 +12,11 @@ jobs:
         name: Check out code
 
       - uses: mr-smithers-excellent/docker-build-push@v5
-        name: Build & push aarch64-none-elf
+        name: Build & push sourcery-aarch64
         with:
           image: a1012112796/rtt_ci_env
           registry: docker.io
-          tags: aarch64-none-elf
+          tags: sourcery-aarch64
           dockerfile: aarch64.Dockerfile
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
