@@ -19,3 +19,5 @@ RUN apt-get update \
 
 ENV RTT_EXEC_PATH=/opt/riscv64-unknown-elf-toolchain-10.2.0-2020.12.8-x86_64-linux-ubuntu14/bin
 ENV RTT_CC='gcc'
+
+CMD ["/bin/bash"]

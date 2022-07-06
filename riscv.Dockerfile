@@ -19,3 +19,5 @@ RUN apt-get update \
 
 ENV RTT_EXEC_PATH=/opt/xpack-riscv-none-embed-gcc-8.3.0-2.3/bin
 ENV RTT_CC='gcc'
+
+CMD ["/bin/bash"]

@@ -19,3 +19,5 @@ RUN apt-get update \
 
 ENV RTT_EXEC_PATH=/opt/gcc-arm-none-eabi-10-2020-q4-major/bin
 ENV RTT_CC='gcc'
+
+CMD ["/bin/bash"]
